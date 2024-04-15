@@ -171,103 +171,111 @@
                 </div>
 
 				<div class="p-nav-opposite">
-					<button type="button" class="btn btn-transparet d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-						<i class="bi bi-download modal-email"></i>
-						<span class="p-navgroup-linkText modal-email d-none d-md-block ">Log in</span>
-					</button>
+					@if (!User.Identity.IsAuthenticated)
+					{
+						<button type="button" class="btn btn-transparet d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+							<i class="bi bi-download modal-email"></i>
+							<span class="p-navgroup-linkText modal-email d-none d-md-block ">Log in</span>
+						</button>
 
-					<!-- Modal -->
-					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content" style="border: 1px solid #6E5C8A;">
-								<div class="modal-header" style="border-bottom: 1px solid #6e5c8a">
-									<h1 class="modal-title fs-5 " id="exampleModalLabel" style="color: #e2ddea; font-size: 14px !important; padding: 5px;">Log in</h1>
-									<!-- <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button> -->
-									<button type="button" class="btn btn-secondary fs-4" style="background: transparent; border: none; color: #907bb1;" data-bs-dismiss="modal">
-										<i class="fa-solid fa-xmark"></i>
-									</button>
-								</div>
-								<div class="blocks block-container ml-0 mr-0">
-									<form action="https://rose-lily.netlify.app/community/login/login" method="post" class="block">
-										<div class="block-container">
-											<div class="block-body" style="border: none !important;">
-												<dl class="formRow formRow--input">
-													<dt class="modal-email-dt">
-														<div class="formRow-labelWrapper">
-															<label class="formRow-label modal-email" for="_xfUid-1-1706288227">Your name or email address</label>
-														</div>
-													</dt>
-													<dd>
-														<input type="text" class="input" name="login" autofocus="autofocus" autocomplete="username" id="_xfUid-1-1706288227" />
-													</dd>
-												</dl>
-												<dl class="formRow formRow--input">
-													<dt class="modal-email-dt">
-														<div class="formRow-labelWrapper">
-															<label class="formRow-label modal-email" for="_xfUid-2-1706288227">Password</label>
-														</div>
-													</dt>
-													<dd>
-														<div data-xf-init=" password-hide-show" data-show-text="Show" data-hide-text="Hide">
-															<div class="inputGroup inputGroup--joined">
-																<input type="password" name="password" value class="input js-password input--passwordHideShow" autocomplete="current-password" id="_xfUid-2-1706288227" />
-																<div class="inputGroup-text">
-																	<label class="iconic iconic--hideShow js-hideShowContainer">
-																		<input type="checkbox" value="1" />
-																		<!-- <i aria-hidden="true"></i> -->
+						<!-- Modal -->
+						<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content" style="border: 1px solid #6E5C8A;">
+									<div class="modal-header" style="border-bottom: 1px solid #6e5c8a">
+										<h1 class="modal-title fs-5 " id="exampleModalLabel" style="color: #e2ddea; font-size: 14px !important; padding: 5px;">Log in</h1>
+										<!-- <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button> -->
+										<button type="button" class="btn btn-secondary fs-4" style="background: transparent; border: none; color: #907bb1;" data-bs-dismiss="modal">
+											<i class="fa-solid fa-xmark"></i>
+										</button>
+									</div>
+									<div class="blocks block-container ml-0 mr-0">
+										<form action="https://rose-lily.netlify.app/community/login/login" method="post" class="block">
+											<div class="block-container">
+												<div class="block-body" style="border: none !important;">
+													<dl class="formRow formRow--input">
+														<dt class="modal-email-dt">
+															<div class="formRow-labelWrapper">
+																<label class="formRow-label modal-email" for="_xfUid-1-1706288227">Your name or email address</label>
+															</div>
+														</dt>
+														<dd>
+															<input type="text" class="input" name="login" autofocus="autofocus" autocomplete="username" id="_xfUid-1-1706288227" />
+														</dd>
+													</dl>
+													<dl class="formRow formRow--input">
+														<dt class="modal-email-dt">
+															<div class="formRow-labelWrapper">
+																<label class="formRow-label modal-email" for="_xfUid-2-1706288227">Password</label>
+															</div>
+														</dt>
+														<dd>
+															<div data-xf-init=" password-hide-show" data-show-text="Show" data-hide-text="Hide">
+																<div class="inputGroup inputGroup--joined">
+																	<input type="password" name="password" value class="input js-password input--passwordHideShow" autocomplete="current-password" id="_xfUid-2-1706288227" />
+																	<div class="inputGroup-text">
+																		<label class="iconic iconic--hideShow js-hideShowContainer">
+																			<input type="checkbox" value="1" />
+																			<!-- <i aria-hidden="true"></i> -->
 
-																		<span class="iconic-label" style="color: #9584B2;"><i class="bi bi-eye eye-color pe-1"></i>Show</span>
-																	</label>
+																			<span class="iconic-label" style="color: #9584B2;"><i class="bi bi-eye eye-color pe-1"></i>Show</span>
+																		</label>
+																	</div>
 																</div>
 															</div>
-														</div>
-														<a href="lost-password/index.html" style="float: left;" class="modal-forget" data-xf-click="overlay">Forgot your password?</a>
-													</dd>
-												</dl>
-												<dl class="formRow">
-													<dt class="modal-email-dt">
-														<div class="formRow-labelWrapper"></div>
-													</dt>
-													<dd>
-														<ul class="inputChoices">
-															<li class="inputChoices-choice">
-																<label class="iconic" style="float: left;">
-																	<input class="form-check-input" checked type="checkbox" name="remember" value="1" checked="checked" />
-																	<i aria-hidden="true"></i>
-																	<span class="iconic-label" style="color: #9584B2;">Stay logged in</span>
-																</label>
-															</li>
-														</ul>
-													</dd>
-												</dl>
-												<dl class="formRow">
-													<dt class="modal-email-dt"></dt>
-													<dd style="padding: 0;">
-														<div class="formSubmitRow-main">
-															<div class="formSubmitRow-bar"></div>
-															<div class="formSubmitRow-controls" style="padding-left: 0; float: left;">
-																<button type="submit" class="button--primary button button--icon ">
-																	<i class="fa-solid fa-lock icon-b"></i>
-																	<span class="button-text">Log in</span>
-																</button>
+															<a href="lost-password/index.html" style="float: left;" class="modal-forget" data-xf-click="overlay">Forgot your password?</a>
+														</dd>
+													</dl>
+													<dl class="formRow">
+														<dt class="modal-email-dt">
+															<div class="formRow-labelWrapper"></div>
+														</dt>
+														<dd>
+															<ul class="inputChoices">
+																<li class="inputChoices-choice">
+																	<label class="iconic" style="float: left;">
+																		<input class="form-check-input" checked type="checkbox" name="remember" value="1" checked="checked" />
+																		<i aria-hidden="true"></i>
+																		<span class="iconic-label" style="color: #9584B2;">Stay logged in</span>
+																	</label>
+																</li>
+															</ul>
+														</dd>
+													</dl>
+													<dl class="formRow">
+														<dt class="modal-email-dt"></dt>
+														<dd style="padding: 0;">
+															<div class="formSubmitRow-main">
+																<div class="formSubmitRow-bar"></div>
+																<div class="formSubmitRow-controls" style="padding-left: 0; float: left;">
+																	<button type="submit" class="button--primary button button--icon ">
+																		<i class="fa-solid fa-lock icon-b"></i>
+																		<span class="button-text">Log in</span>
+																	</button>
+																</div>
 															</div>
-														</div>
-													</dd>
-												</dl>
-												<input type="hidden" name="_xfRedirect" value />
+														</dd>
+													</dl>
+													<input type="hidden" name="_xfRedirect" value />
+												</div>
 											</div>
-										</div>
-										<input type="hidden" name="_xfToken" value="1706288227,456fb94b856657a26cb36a79600f38a9" />
-									</form>
+											<input type="hidden" name="_xfToken" value="1706288227,456fb94b856657a26cb36a79600f38a9" />
+										</form>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
 
-					<button type="button" class="btn btn-transparet d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#registerModal">
-						<i class="fa-solid fa-user-plus modal-email"></i>
-						<span class="p-navgroup-linkText modal-email d-none d-md-block ">Register</span>
-					</button>
+						<button type="button" class="btn btn-transparet d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#registerModal">
+							<i class="fa-solid fa-user-plus modal-email"></i>
+							<span class="p-navgroup-linkText modal-email d-none d-md-block ">Register</span>
+						</button>
+					}
+					else
+					{
+						
+					}
+					
 
 					<!-- Modal -->
 					<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

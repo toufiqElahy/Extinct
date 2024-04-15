@@ -93,7 +93,13 @@
                                                     </ul>
                                                 </div>
                                                 <div class="modal-footer d-flex justify-content-center modal-btn" style="background: #2D2145; color: #907bb1; border-top: 1px solid rgb(85,66,112);">
-                                                    <button class="fw-bolder" type="button">Sign in <i class="bi bi-arrow-right fs-4"></i></button>
+                                                    @if (!User.Identity.IsAuthenticated)
+                                                        {
+                                                        <a asp-area="" asp-controller="Community" asp-action="Index" class="fw-bolder" type="button">Sign in <i class="bi bi-arrow-right fs-4"></i></a>
+                                                    }else{
+                                                        <a asp-area="" asp-controller="Community" asp-action="LogOut" class="fw-bolder" type="button">Sign Out <i class="bi bi-arrow-right fs-4"></i></a>
+                                                    }
+                                                        
                                                 </div>
                                             </div>
                                         </div>
@@ -227,12 +233,25 @@
                                         Community
                                     </a>
                                     <div>
-                                        <a asp-area="" asp-controller="Community" asp-action="Index" class="flex items-center justify-center w-full px-5 py-3 space-x-2 font-medium text-center transition duration-150 ease-in-out border-neutral-350 text-neutral-200 bg-neutral-600 hover:bg-neutral-400 hover:text-neutral-100 focus:outline-none focus:bg-neutral-400 focus:text-neutral-100">
-                                            <span>Sign in</span>
-                                            <svg class="w-5 h-5 transition-transform duration-150 ease-in-out group-hover:transform group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                            </svg>
-                                        </a>
+                                        @if (!User.Identity.IsAuthenticated)
+                                        {
+                                            <a asp-area="" asp-controller="Community" asp-action="Index" class="flex items-center justify-center w-full px-5 py-3 space-x-2 font-medium text-center transition duration-150 ease-in-out border-neutral-350 text-neutral-200 bg-neutral-600 hover:bg-neutral-400 hover:text-neutral-100 focus:outline-none focus:bg-neutral-400 focus:text-neutral-100">
+                                                <span>Sign in</span>
+                                                <svg class="w-5 h-5 transition-transform duration-150 ease-in-out group-hover:transform group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                                </svg>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a asp-area="" asp-controller="Community" asp-action="LogOut" class="flex items-center justify-center w-full px-5 py-3 space-x-2 font-medium text-center transition duration-150 ease-in-out border-neutral-350 text-neutral-200 bg-neutral-600 hover:bg-neutral-400 hover:text-neutral-100 focus:outline-none focus:bg-neutral-400 focus:text-neutral-100">
+                                                <span>(@User.Identity.Name)Sign Out</span>
+                                                <svg class="w-5 h-5 transition-transform duration-150 ease-in-out group-hover:transform group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                                </svg>
+                                            </a>
+                                        }
+                                        
                                     </div>
                                 </div>
                             </div>
