@@ -1,0 +1,19 @@
+﻿@{
+    var controllerName = this.ViewContext.RouteData.Values["controller"].ToString();
+
+    if (controllerName=="Home"){
+        Layout = "_Layout";//"_Layout";
+    }
+    else if (controllerName == "Dashboard")
+    {
+        Layout = "_LayoutDashboard";//"_Layout";
+    }
+    else if (controllerName == "Community")
+    {
+        Layout = "_LayoutCommunity";//"_Layout";
+    }
+    else
+    {
+        Layout = "_LayoutCommon";
+    }
+}

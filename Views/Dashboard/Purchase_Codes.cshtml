@@ -1,0 +1,131 @@
+﻿
+
+<main class="relative z-0 h-screen max-h-screen px-8 py-6 overflow-y-auto focus:outline-none">
+<div wire:id="ibm45nMkwVscKK0RcSqS" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;ibm45nMkwVscKK0RcSqS&quot;,&quot;name&quot;:&quot;codes.purchase-codes&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;dashboard\/purchase-codes&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[],&quot;path&quot;:&quot;https:\/\/interwebz-cheats.com\/dashboard\/purchase-codes&quot;},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;43c2c500&quot;,&quot;data&quot;:{&quot;product&quot;:&quot;&quot;,&quot;price&quot;:&quot;&quot;,&quot;quantity&quot;:&quot;&quot;,&quot;page&quot;:1,&quot;paginators&quot;:{&quot;page&quot;:1}},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;09995706e0f3c74b8aa2e0d0ca9d1a2b22d9a8fbd413ceca75b605aaaecc5082&quot;}}" class="flex justify-between flex-1 mx-auto max-w-9xl lg:flex">
+<div class="w-full max-w-4xl mx-auto space-y-8">
+<div class="rounded-md shadow p-4 bg-yellow-300 border border-yellow-200 text-yellow-100">
+This page is primarily meant for resellers so they can bulk purchase easier. <br>
+If you are a regular customer, please <a class='underline' asp-area="" asp-controller="Common" asp-action="Purchase_Cheats">purchase here</a> instead.
+</div>
+<div class="w-full border rounded-md shadow bg-neutral-400 border-neutral-300">
+<div class="px-4 py-5 border-b border-neutral-300 bg-neutral-400 sm:px-6 rounded-t-md">
+<h3 class="text-base font-semibold leading-6 text-neutral-100">Purchase Prepaid Codes</h3>
+<p class="mt-1 text-sm text-neutral-200">
+Bulk purchase prepaid codes that can be claimed by other customers.
+</p>
+</div>
+<div class="px-4 py-5 sm:px-6">
+<div class="grid grid-cols-2 gap-x-8 gap-y-4">
+<div class="col-span-2 md:col-span-1">
+<div class>
+<label for="product" class="block text-sm font-medium leading-5 text-neutral-100">Product</label>
+<div class="relative mt-1 rounded-md shadow-sm">
+<select wire:loading.attr="disabled" class="w-full border rounded-md outline-none border-neutral-300 bg-neutral-350 disabled:opacity-50" wire:model="product">
+<option value="">Select Product...</option>
+<option value="33bd36bd-16c4-432a-b1e8-dd19e5a3f52c">Call of Duty - Complete Package</option>
+<option value="9263d9f1-1f72-4ff2-9bc9-f2816d8e8583">Call of Duty: Black Ops Cold War</option>
+<option value="f6e94ca1-3a61-4c74-abb0-6cc666e7b5a1">Call of Duty: Modern Warfare (2019)</option>
+<option value="6f667e52-6c6e-4139-bc20-f68425aca56e">Call of Duty: Modern Warfare II / DMZ</option>
+<option value="8c183c5c-51da-4ea0-8efe-46c175aef84f">Call of Duty: Modern Warfare III / Warzone</option>
+<option value="7af958a9-fe42-4ce0-97cc-13b599b90af1">Call of Duty: Vanguard</option>
+<option value="d25c816c-00f0-4812-b174-360a64d87a17">Counter-Strike 2</option>
+<option value="dab78198-edec-411d-b933-463fe7be11b2">Counter-Strike: Source</option>
+<option value="5ca384c1-7d43-4c07-868e-62df0a817ed7">Privacy Tool</option>
+<option value="80a6021e-ac94-4a24-a209-da5b80790622">STAR WARS Battlefront II</option>
+<option value="7a31f5c6-eeb0-41e5-b7f9-5566a67f8504">The Ultimate Package</option>
+</select>
+</div>
+</div>
+</div>
+<div class="col-span-2 md:col-span-1">
+<div class>
+<label for="price" class="block text-sm font-medium leading-5 text-neutral-100">Duration</label>
+<div class="relative mt-1 rounded-md shadow-sm">
+<select wire:loading.attr="disabled" :disabled="1" class="w-full border rounded-md outline-none border-neutral-300 bg-neutral-350 disabled:opacity-50" wire:model="price">
+<option value="">Select Price...</option>
+</select>
+</div>
+</div>
+</div>
+<div class="col-span-2">
+<div class>
+<label for="quantity" class="block text-sm font-medium leading-5 text-neutral-100">Quantity</label>
+<div class="relative mt-1 rounded-md shadow-sm">
+<select wire:loading.attr="disabled" class="w-full border rounded-md outline-none border-neutral-300 bg-neutral-350" wire:model="quantity">
+<option value="">Select Quantity...</option>
+<option value="10">
+10 Codes - 15%
+Discount
+</option>
+<option value="25">
+25 Codes - 20%
+Discount
+</option>
+<option value="50">
+50 Codes - 25%
+Discount
+</option>
+<option value="100">
+100 Codes - 30%
+Discount
+</option>
+<option value="250">
+250 Codes - 35%
+Discount
+</option>
+<option value="500">
+500 Codes - 40%
+Discount
+</option>
+<option value="1000">
+1000 Codes - 45%
+Discount
+</option>
+</select>
+</div>
+</div>
+</div>
+<div class="col-span-2">
+<form wire:submit.prevent="submit">
+<span class="flex rounded-md shadow-sm ">
+<button type="submit" class="inline-flex items-center justify-center border font-medium focus:outline-none transition duration-150 ease-in-out px-4 py-2 text-base leading-6 rounded-md text-neutral-100 bg-gradient-to-r from-brand-orange to-brand-red border-transparent opacity-75 hover:opacity-100 focus:outline-none focus:ring ring-brand-orange ring-opacity-50 disabled:opacity-75 disabled:cursor-not-allowed w-full" disabled="disabled" size="lg" wire:loading.attr="disabled">
+<span>Select Product, Duration, and Quantity</span>
+</button>
+</span>
+</form>
+</div>
+</div>
+</div>
+<div class="px-4 py-5 border-t border-neutral-300 bg-neutral-400 sm:px-6 rounded-b-md">
+<h3 class="text-base font-semibold leading-6 text-neutral-100">Prepaid Code Terms</h3>
+<div class="mt-2">
+<ul class="list-disc text-sm text-neutral-200 space-y-1">
+<li class="ml-6">Prepaid codes are meant for reselling purposes, not for personal use.</li>
+<li class="ml-6">Prepaid codes are non-refundable, without exceptions.</li>
+<li class="ml-6">If a product were to be discontinued, prepaid codes will be voided.</li>
+<li class="ml-6">Prepaid codes may be voided by us for any other reason without notice.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="w-full border rounded-md shadow bg-neutral-400 border-neutral-300">
+<div class="px-4 py-5 border-b border-neutral-300 bg-neutral-400 sm:px-6 rounded-t-md">
+<h3 class="text-base font-semibold leading-6 text-neutral-100">Prepaid Purchase History</h3>
+<p class="mt-1 text-sm text-neutral-200">
+Your previous prepaid code purchases.
+</p>
+</div>
+<div>
+<ul class="divide-y divide-neutral-300">
+<li class="py-5 text-sm font-medium text-center text-neutral-200">No purchase history.</li>
+</ul>
+</div>
+</div>
+<div>
+<div>
+</div>
+</div>
+</div>
+</div>
+
+</main>

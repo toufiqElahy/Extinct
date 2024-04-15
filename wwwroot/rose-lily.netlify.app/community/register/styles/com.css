@@ -1,0 +1,21 @@
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 782px !important;
+    }
+}
+.modal {
+    --bs-modal-header-padding: 4px 1rem !important;
+    --bs-modal-bg: #362A51 !important;
+    --bs-modal-color: ;
+}
+.modal-email {
+    color: #A08FBD;
+    font-weight: 500;
+    font-size: 15px;
+}
+.modal-email-dt {
+    background: #554270 !important;
+}
+.modal-forget:hover {
+    color: #e8e0f5 !important;
+}

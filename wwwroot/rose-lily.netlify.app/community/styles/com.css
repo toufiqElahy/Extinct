@@ -1,0 +1,66 @@
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 782px !important;
+    }
+}
+.modal {
+    --bs-modal-header-padding: 4px 1rem !important;
+    --bs-modal-bg: #362A51 !important;
+    --bs-modal-color: ;
+}
+.modal-email {
+    color: #A08FBD;
+    font-weight: 500;
+    font-size: 15px;
+}
+.modal-email-dt {
+    background: #554270 !important;
+}
+.modal-forget:hover {
+    color: #e8e0f5 !important;
+}
+
+@media screen and (max-width: 490px) {
+    .dropdown-search-menu{
+        width: 250px !important;
+    }
+    
+}
+
+
+.dropdown-search-menu {
+    padding: 0 !important;
+    width: 350px;
+}
+.icon-box {
+    color: #a08fbd ;
+}
+.icon-box:hover {
+    color: lightcyan;
+}
+.dropdown-text-color {
+    color: #a08fbd;
+}
+.search--newIndicator {
+    font-size: 12px;
+    color: #e8e0f5;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    background: linear-gradient(90deg, #d16a47 0%, #d1475e 100%);
+    box-shadow: 0px 0px 5px rgba(209,106,71,0.5);
+    margin-left: 4px;
+    border: none;
+}
+::placeholder {
+    color: #695E8F !important;
+    opacity: 1;
+  }
+.advance-btn{
+    background-color: #554270 !important;
+    border: 1px solid #6e5c8a !important;
+}
+.ad-btn:hover {
+    color: #E8D9D7 !important;
+}

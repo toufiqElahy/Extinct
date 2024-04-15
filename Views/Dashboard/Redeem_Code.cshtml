@@ -1,0 +1,48 @@
+﻿
+
+<main class="relative z-0 h-screen max-h-screen px-8 py-6 overflow-y-auto focus:outline-none">
+<div wire:id="3qOOUWK8stqJJQYUVMP5" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;3qOOUWK8stqJJQYUVMP5&quot;,&quot;name&quot;:&quot;codes.redeem-code&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;dashboard\/redeem-code&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[],&quot;path&quot;:&quot;https:\/\/interwebz-cheats.com\/dashboard\/redeem-code&quot;},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1353d213&quot;,&quot;data&quot;:{&quot;code&quot;:&quot;&quot;,&quot;page&quot;:1,&quot;paginators&quot;:{&quot;page&quot;:1}},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;ebb042ebe3f507e66af7474cb502aa1a1941a38c233cd92174f2f02503a856aa&quot;}}" class="flex justify-between flex-1 mx-auto max-w-9xl lg:flex">
+<div class="w-full max-w-4xl mx-auto space-y-8">
+<div class="w-full border rounded-md shadow bg-neutral-400 border-neutral-300">
+<div class="px-4 py-5 border-b border-neutral-300 bg-neutral-400 sm:px-6 rounded-t-md">
+<h3 class="text-base font-semibold leading-6 text-neutral-100">Redeem Prepaid Codes</h3>
+<p class="mt-1 text-sm text-neutral-200">
+Redeem prepaid codes to your account.
+</p>
+</div>
+<div class="px-4 py-5 sm:px-6">
+<form wire:submit.prevent="redeem" class="space-y-4">
+<div class="space-y-1">
+<div class="flex rounded-md shadow-sm">
+<input type="text" class="flex-1 block w-full transition duration-150 ease-in-out rounded-md bg-neutral-350 border-neutral-300 border focus:ring focus:ring-neutral-300 focus:ring-opacity-75 focus:border-neutral-300 placeholder-neutral-200" wire:model="code" placeholder="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" wire:model="code" placeholder="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" />
+</div>
+</div>
+<span class="flex rounded-md shadow-sm ">
+<button type="submit" class="inline-flex items-center justify-center border font-medium focus:outline-none transition duration-150 ease-in-out px-4 py-2 text-base leading-6 rounded-md text-neutral-100 bg-gradient-to-r from-brand-orange to-brand-red border-transparent opacity-75 hover:opacity-100 focus:outline-none focus:ring ring-brand-orange ring-opacity-50 disabled:opacity-75 disabled:cursor-not-allowed w-full" size="lg" wire:loading.attr="disabled">
+Redeem Code
+</button>
+</span>
+</form>
+</div>
+</div>
+<div class="w-full border rounded-md shadow bg-neutral-400 border-neutral-300">
+<div class="px-4 py-5 border-b border-neutral-300 bg-neutral-400 sm:px-6 rounded-t-md">
+<h3 class="text-base font-semibold leading-6 text-neutral-100">Previous Redemptions</h3>
+<p class="mt-1 text-sm text-neutral-200">
+Prepaid codes you have previously claimed.
+</p>
+</div>
+<div class>
+<ul class="divide-y divide-neutral-300">
+<li class="py-5 text-sm font-medium text-center text-neutral-200">No purchase history.</li>
+</ul>
+</div>
+</div>
+<div>
+<div>
+</div>
+</div>
+</div>
+</div>
+
+</main>

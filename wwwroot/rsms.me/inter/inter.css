@@ -1,0 +1,67 @@
+/*
+Font families defined by this CSS:
+  - InterVariable  variable font for modern web browsers
+  - Inter          static fonts for older web browsers (small optical size)
+  - InterDisplay   static fonts for older web browsers (large optical size)
+
+Usage example:
+  :root { font-family: Inter, sans-serif; }
+  @supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
+  }
+
+*/
+@font-face {
+  font-family: InterVariable;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('font-files/InterVariable48b2.woff2?v=4.0') format('woff2');
+}
+@font-face {
+  font-family: InterVariable;
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('font-files/InterVariable-Italic48b2.woff2?v=4.0') format('woff2');
+}
+/* legacy name "Inter var" (Oct 2023) */
+@font-face { font-family:'Inter var'; font-style:normal; font-weight:100 900; font-display:swap; src: url('font-files/InterVariable48b2.woff2?v=4.0') format('woff2'); }
+@font-face { font-family:'Inter var'; font-style:italic; font-weight:100 900; font-display:swap; src: url('font-files/InterVariable-Italic48b2.woff2?v=4.0') format('woff2'); }
+/* static fonts */
+@font-face { font-family:Inter; font-style:normal; font-weight:100; font-display:swap; src:url("font-files/Inter-Thin48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:italic; font-weight:100; font-display:swap; src:url("font-files/Inter-ThinItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:normal; font-weight:200; font-display:swap; src:url("font-files/Inter-ExtraLight48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:italic; font-weight:200; font-display:swap; src:url("font-files/Inter-ExtraLightItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:normal; font-weight:300; font-display:swap; src:url("font-files/Inter-Light48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:italic; font-weight:300; font-display:swap; src:url("font-files/Inter-LightItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:normal; font-weight:400; font-display:swap; src:url("font-files/Inter-Regular48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:italic; font-weight:400; font-display:swap; src:url("font-files/Inter-Italic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:normal; font-weight:500; font-display:swap; src:url("font-files/Inter-Medium48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:italic; font-weight:500; font-display:swap; src:url("font-files/Inter-MediumItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:normal; font-weight:600; font-display:swap; src:url("font-files/Inter-SemiBold48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:italic; font-weight:600; font-display:swap; src:url("font-files/Inter-SemiBoldItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:normal; font-weight:700; font-display:swap; src:url("font-files/Inter-Bold48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:italic; font-weight:700; font-display:swap; src:url("font-files/Inter-BoldItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:normal; font-weight:800; font-display:swap; src:url("font-files/Inter-ExtraBold48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:italic; font-weight:800; font-display:swap; src:url("font-files/Inter-ExtraBoldItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:normal; font-weight:900; font-display:swap; src:url("font-files/Inter-Black48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:Inter; font-style:italic; font-weight:900; font-display:swap; src:url("font-files/Inter-BlackItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:normal; font-weight:100; font-display:swap; src:url("font-files/InterDisplay-Thin48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:italic; font-weight:100; font-display:swap; src:url("font-files/InterDisplay-ThinItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:normal; font-weight:200; font-display:swap; src:url("font-files/InterDisplay-ExtraLight48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:italic; font-weight:200; font-display:swap; src:url("font-files/InterDisplay-ExtraLightItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:normal; font-weight:300; font-display:swap; src:url("font-files/InterDisplay-Light48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:italic; font-weight:300; font-display:swap; src:url("font-files/InterDisplay-LightItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:normal; font-weight:400; font-display:swap; src:url("font-files/InterDisplay-Regular48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:italic; font-weight:400; font-display:swap; src:url("font-files/InterDisplay-Italic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:normal; font-weight:500; font-display:swap; src:url("font-files/InterDisplay-Medium48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:italic; font-weight:500; font-display:swap; src:url("font-files/InterDisplay-MediumItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:normal; font-weight:600; font-display:swap; src:url("font-files/InterDisplay-SemiBold48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:italic; font-weight:600; font-display:swap; src:url("font-files/InterDisplay-SemiBoldItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:normal; font-weight:700; font-display:swap; src:url("font-files/InterDisplay-Bold48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:italic; font-weight:700; font-display:swap; src:url("font-files/InterDisplay-BoldItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:normal; font-weight:800; font-display:swap; src:url("font-files/InterDisplay-ExtraBold48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:italic; font-weight:800; font-display:swap; src:url("font-files/InterDisplay-ExtraBoldItalic48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:normal; font-weight:900; font-display:swap; src:url("font-files/InterDisplay-Black48b2.woff2?v=4.0") format("woff2"); }
+@font-face { font-family:InterDisplay; font-style:italic; font-weight:900; font-display:swap; src:url("font-files/InterDisplay-BlackItalic48b2.woff2?v=4.0") format("woff2"); }

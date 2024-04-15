@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.interwebz-cheats.com	TRUE	/	FALSE	1999999999	__cf_bm	TQ94_qA8vuP6u7LOuwVpwJtvFi.9A2J5TmJz0F6kxZU-1709807860-1.0.1.1-b42PZHP6E0ckUxoyRlfgifO.lFwVVxXusFk5llzODhoXYw4kdDvI4PZpwESqrdP60K3UYrDKVhgeC8jOd30Luw
+interwebz-cheats.com	TRUE	/	FALSE	1999999999	SameSite	None
+
