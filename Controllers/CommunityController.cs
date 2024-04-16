@@ -29,12 +29,12 @@ namespace interwebz.Controllers
 				return View();
 		}
 		[HttpPost]
-		public async Task<IActionResult> Login(string email, string password, string remember, string returnUrl = null)
+		public async Task<IActionResult> Login(string username, string password, string remember, string returnUrl = null)
 		{
 			ViewData["ReturnUrl"] = returnUrl;
 
 
-			var user = _userManager.FindByNameAsync(email).Result;
+			var user = _userManager.FindByNameAsync(username).Result;
 
 			if (user != null)
 			{
@@ -62,8 +62,8 @@ namespace interwebz.Controllers
 				}
 			}
 
-			
 
+			//await _signInManager.SignInAsync(new ApplicationUser { UserName="Anonymous", Email="a@a.com" }, true);
 			TempData["msg"] = "Invalid login attempt.";
 
 
