@@ -34,7 +34,8 @@ namespace interwebz.Controllers
 			ViewData["ReturnUrl"] = returnUrl;
 
 
-			var user = _userManager.FindByEmailAsync(email).Result;
+			var user = _userManager.FindByNameAsync(email).Result;
+
 			if (user != null)
 			{
 				//if (!_userManager.IsEmailConfirmedAsync

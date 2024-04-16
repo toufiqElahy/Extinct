@@ -122,7 +122,9 @@
 							<div class="blocks block-container">
 								<form action="/Community/Register" method="post" class="block">
 									<div class="block-container">
+										
 										<div class="block-body">
+											<div style="color:red" class="text-center">@TempData["msg"]</div>
 											<dl class="formRow formRow--input">
 												<dt>
 													<div class="formRow-labelWrapper">
@@ -157,20 +159,20 @@
 													<div data-xf-init=" password-hide-show" data-show-text="Show" data-hide-text="Hide">
 														<div class="inputGroup inputGroup--joined">
 															<input type="password" name="password" required value class="input input-email js-password input--passwordHideShow" autocomplete="current-password" id="_xfUid-2-1706288227" />
-															<div class="inputGroup-text">
+															@* <div class="inputGroup-text">
 																<label class="iconic iconic--hideShow js-hideShowContainer">
 																	<input type="checkbox" value="1" />
 																	<!-- <i aria-hidden="true"></i> -->
 
 																	<span class="iconic-label"><i class="bi bi-eye eye-color pr-2"></i>Show</span>
 																</label>
-															</div>
+															</div> *@
 														</div>
 													</div>
 													<p style="float: left; color: #9584B2;" class="">Entering a password is required.</p>
 												</dd>
 											</dl>
-											<dl class="formRow formRow--input">
+										@* 	<dl class="formRow formRow--input">
 												<dt class="modal-email-dt">
 													<div class="formRow-labelWrapper">
 														<label class="formRow-label modal-email" for="_xfUid-1-1706288227">Verification</label>
@@ -187,7 +189,7 @@
 														<label style="margin-left: 1rem;  color: #9584B2;"> I am human</label>
 													</div>
 												</dd>
-											</dl>
+											</dl> *@
 											<dl class="formRow">
 												<dt>
 													<div class="formRow-labelWrapper"></div>
@@ -198,7 +200,7 @@
 															<!-- <label class="iconic">
 															<input class="form-check-input" checked type="checkbox" name="remember" value="1" checked="checked" />
 															<i aria-hidden="true"></i> -->
-															<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+															<input class="form-check-input" type="checkbox" required value="" id="flexCheckDefault">
 															<span class="iconic-label" style="color: #9584B2;">I agree to the terms and privacy policy.</span></label>
 														</li>
 													</ul>
