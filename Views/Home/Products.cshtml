@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<interwebz.Models.Product>
+@{
     ViewBag.Title = "All Cheats - Undetected Cheats/Hacks";
 }
 
@@ -109,21 +110,21 @@ All Products
 <div class="col-span-9 space-y-6">
 <div class="space-y-4">
 <ul class="overflow-hidden border divide-y rounded-md shadow bg-neutral-400 border-neutral-300 divide-neutral-300">
-<a class='flex transition-colors duration-150 hover:text-neutral-100 text-neutral-200 ' asp-area="" asp-controller="Home" asp-action="Call_of_duty">
+                                @foreach (var item in Model)
+                                {
+<a class='flex transition-colors duration-150 hover:text-neutral-100 text-neutral-200 ' href="/Home/Product?productId=@item.ProductId">
 <li class="flex items-center flex-1 px-4 py-4 sm:px-6 sm:flex-row justify-between">
 <div class="flex flex-col space-y-2 lg:flex-row lg:space-y-0 lg:space-x-4">
 <div class="flex-shrink-0">
-<img class="w-10 h-10 rounded-md shadow" src="/rose-lily.netlify.app/products/styles/storage/474/e427b262-ea02-4491-b9d3-27ac3de6a4ec."/rose-lily.netlify.app/products/styles/storage of Duty - Complete Package's Icon">
+<img class="w-10 h-10 rounded-md shadow" src="@item.Image">
 </div>
 <div class="block lg:ml-4">
 <div class="flex flex-wrap items-center sm:space-x-2">
 <div class="text-base font-semibold leading-7 text-center truncate text-neutral-100 sm:text-left">
-Call of Duty - Complete Package
+@item.Name - @item.Title
 </div>
 </div>
-<div class="max-w-2xl mx-auto text-xs font-medium leading-5 text-neutral-200 ">
-Get access to all our cheats for the Call of Duty series! For more information about the specific cheats, visit their own dedicated pages.
-</div>
+<div class="max-w-2xl mx-auto text-xs font-medium leading-5 text-neutral-200 ">@item.Description</div>
 </div>
 </div>
 <div class="hidden lg:block">
@@ -132,6 +133,7 @@ Get access to all our cheats for the Call of Duty series! For more information a
 </svg> </div>
 </li>
 </a>
+}
 <a class='flex transition-colors duration-150 hover:text-neutral-100 text-neutral-200 ' asp-area="" asp-controller="Home" asp-action="Call_of_duty">
 <li class="flex items-center flex-1 px-4 py-4 sm:px-6 sm:flex-row justify-between">
 <div class="flex flex-col space-y-2 lg:flex-row lg:space-y-0 lg:space-x-4">

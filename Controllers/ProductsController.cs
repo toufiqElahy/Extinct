@@ -13,10 +13,12 @@ namespace interwebz.Controllers
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private IWebHostEnvironment Environment;
 
-        public ProductsController(ApplicationDbContext context)
+        public ProductsController(ApplicationDbContext context, IWebHostEnvironment _environment)
         {
             _context = context;
+            Environment = _environment; 
         }
 
         // GET: Products
@@ -42,7 +44,25 @@ namespace interwebz.Controllers
 
             return View(product);
         }
+        private async Task upload([FromForm] IFormFileCollection files, string targetFolder)
+        {
+            foreach (IFormFile file in files)
+            {
+                if (file.Length <= 0) continue;
 
+                //fileName is the the fileName including the relative path
+                //var filePath = file.FileName.Substring(file.FileName.IndexOf('/') + 1);
+                string path = Path.Combine(targetFolder, file.FileName);
+
+                //check if folder exists, create if not
+                var fi = new FileInfo(path);
+                fi.Directory?.Create();
+
+                //copy to target
+                using var fileStream = new FileStream(path, FileMode.Create);
+                await file.CopyToAsync(fileStream);
+            }
+        }
         // GET: Products/Create
         public IActionResult Create()
         {
@@ -54,8 +74,16 @@ namespace interwebz.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductId,Name,Title,Description,Status,Image,CreationDate,RedeemtionCode")] Product product)
+        public async Task<IActionResult> Create([FromForm] IFormFileCollection Files, [Bind("ProductId,Name,Title,Description,Status,Image,CreationDate,RedeemtionCode")] Product product)
         {
+            string folder=  Guid.NewGuid().ToString() + "/";
+            string targetFolder= this.Environment.WebRootPath + "/Images/"+ folder;
+            if (Files.Count > 0)
+            {
+                await upload(Files, targetFolder);
+                product.Image = folder + Files[0].FileName;
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(product);
@@ -86,8 +114,16 @@ namespace interwebz.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductId,Name,Title,Description,Status,Image,CreationDate,RedeemtionCode")] Product product)
+        public async Task<IActionResult> Edit([FromForm] IFormFileCollection Files, int id, [Bind("ProductId,Name,Title,Description,Status,Image,CreationDate,RedeemtionCode")] Product product)
         {
+            string folder = product.Image.Split('/')[0]+"/";
+            string targetFolder = this.Environment.WebRootPath + "/Images/" + folder;
+            if (Files.Count > 0)
+            {
+                await upload(Files, targetFolder);
+                product.Image = folder + Files[0].FileName;
+            }
+
             if (id != product.ProductId)
             {
                 return NotFound();

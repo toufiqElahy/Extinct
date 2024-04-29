@@ -1,16 +1,18 @@
+using interwebz.Data;
 using interwebz.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace interwebz.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -22,9 +24,25 @@ namespace interwebz.Controllers
         {
             return View();
         }
-        public IActionResult Products()
+        public async Task<IActionResult> Products()
         {
-            return View();
+            return View(await _context.Product.ToListAsync());
+        }
+        public async Task<IActionResult> Product(int? productId)
+        {
+            if (productId == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Product
+                .FirstOrDefaultAsync(m => m.ProductId == productId);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(product);
         }
         public IActionResult Call_of_duty()
         {
@@ -33,10 +51,10 @@ namespace interwebz.Controllers
 		
 		
 
-		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+		//[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+  //      public IActionResult Error()
+  //      {
+  //          return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+  //      }
     }
 }
