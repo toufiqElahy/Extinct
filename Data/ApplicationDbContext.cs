@@ -10,5 +10,6 @@ namespace interwebz.Data
             : base(options)
         {
         }
+        public DbSet<interwebz.Models.Product> Product { get; set; } = default!;
     }
 }
