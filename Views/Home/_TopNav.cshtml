@@ -31,6 +31,13 @@
                                 <li>
                                     <a asp-area="" asp-controller="Community" asp-action="Index">Community</a>
                                 </li>
+                                @if (User.Identity.Name == "admin")
+                                {
+                                <li>
+                                    <a asp-area="" asp-controller="Products" asp-action="Index">Admin</a>
+                                </li>
+                                }
+                                
                             </ul>
                         </div>
                         <div class="modal-footer d-flex justify-content-center modal-btn" style="background: #2D2145; color: #907bb1; border-top: 1px solid rgb(85,66,112);">
@@ -175,6 +182,13 @@
             <a asp-area="" asp-controller="Community" asp-action="Index" class="font-medium transition duration-150 ease-in-out whitespace-nowrap text-neutral-200 hover:text-neutral-100">
                 Community
             </a>
+            @if (User.Identity.Name == "admin")
+            {
+                <a asp-area="" asp-controller="Products" asp-action="Index" class="font-medium transition duration-150 ease-in-out whitespace-nowrap text-neutral-200 hover:text-neutral-100">
+                    Admin
+                </a>
+            }
+           
             <div>
                 @if (!User.Identity.IsAuthenticated)
                 {

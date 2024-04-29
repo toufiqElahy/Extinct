@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using interwebz.Data;
 using interwebz.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace interwebz.Controllers
 {
+    [Authorize]
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,16 +22,25 @@ namespace interwebz.Controllers
             _context = context;
             Environment = _environment; 
         }
+        private void CheckAdmin()
+        {
+            if (User.Identity.Name != "admin")
+            {
+                throw new Exception();
+            }
+        }
 
         // GET: Products
         public async Task<IActionResult> Index()
         {
+            CheckAdmin();
             return View(await _context.Product.ToListAsync());
         }
 
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            CheckAdmin();
             if (id == null)
             {
                 return NotFound();
@@ -66,6 +77,7 @@ namespace interwebz.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+            CheckAdmin();
             return View();
         }
 
@@ -96,6 +108,7 @@ namespace interwebz.Controllers
         // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            CheckAdmin();
             if (id == null)
             {
                 return NotFound();
@@ -155,6 +168,7 @@ namespace interwebz.Controllers
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            CheckAdmin();
             if (id == null)
             {
                 return NotFound();
