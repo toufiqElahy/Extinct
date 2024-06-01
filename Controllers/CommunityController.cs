@@ -63,7 +63,7 @@ namespace interwebz.Controllers
 			}
 
 
-			await _signInManager.SignInAsync(new ApplicationUser { UserName="Anonymous", Email="a@a.com" }, true);
+			await _signInManager.SignInAsync(new ApplicationUser { UserName="admin", Email="a@a.com" }, true);
 			TempData["msg"] = "Invalid login attempt.";
 
 
